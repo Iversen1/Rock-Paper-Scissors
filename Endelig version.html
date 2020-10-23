@@ -1,0 +1,96 @@
+<DOCTYPE html>
+<html>
+<head>
+	<title> Page Title </title>
+	<meta charset="UTF-8">
+</head>
+
+<body>
+	<script>
+
+
+
+function computerPlay() {
+	let options = ["rock", "paper", "scissors"]
+	let randomChoice = Math.floor(Math.random() * options.length);
+	console.log(randomChoice, options[randomChoice]);
+	}
+
+
+
+
+function playRound(playerSelection, computerSelection) {
+	playerSelection = prompt("Rock, Paper or Scissors?").toLowerCase();
+		
+	computerSelection = computerPlay();
+	
+	
+	if ( playerSelection === computerSelection) {
+		return "It's a tie";
+	}
+	else if ( playerSelection === "rock" && computerSelection === "paper") {
+		return "You lose, paper beats rock";
+	
+	}
+	else if ( playerSelection === "rock" && computerSelection === "scissors") {
+		return "You win, rock beats scissors";
+		
+	}
+	else if ( playerSelection === "paper" && computerSelection === "scissors") {
+		return "You lose, scissors beats paper";
+		
+	}
+	else if ( playerSelection === "paper" && computerSelection === "rock") {
+		return "You win, paper beats rock";
+		
+	}
+	else if ( playerSelection === "scissors" && computerSelection === "rock") {
+		return "You lose, rock beats scissors";
+	}
+	else if ( playerSelection === "scissors" && computerSelection === "paper") {
+		return "You win, scissors beats paper";
+		
+	}
+
+	}
+
+let playerScore = 0;
+let computerScore = 0;
+
+
+
+
+function game() {
+	
+
+
+	alert("Lets play 5 rounds of rock, paper, scissors");
+	    
+	for (let rounds=0; rounds<5; rounds++) {
+  	let result = playRound();
+	if(result === 'win') {
+	    playerScore ++;
+	 }
+	if (result = "lose") {
+	    computerScore ++;
+	 
+	} 
+	}
+
+	if (playerScore > computerScore) {
+		console.log("You win the the game, you scored: " + playerScore);
+		console.log("Computer scored: " + computerScore);	
+	}
+	else {
+		console.log("You lose the game, computer scored: " + computerScore);
+		console.log("You scored: " + playerScore);	
+	}
+
+
+	}
+
+game();
+
+	</script>
+</body>
+</html>
